@@ -127,6 +127,16 @@ img{max-width:100%; display:block}
 .hero__title{font-size:var(--fs-hero); margin:.2em 0 .3em; font-weight:800}
 .hero__cta{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
 
+/* Make hero overlays non-clickable and keep content on top */
+.hero::before,
+.hero::after {
+  pointer-events: none;        /* <-- critical */
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;                  /* ensure above overlays */
+}
 /* =====================
    PRODUCT PREVIEW CARDS (HOME)
    ===================== */
