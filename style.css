@@ -98,13 +98,30 @@ img{max-width:100%; display:block}
    ===================== */
 .hero{position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden}
 .hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-image: url('assets/bg.jpg');
-  background-size: contain;     /* show full image without zoom */
+  background-size: cover;               /* keep image high quality */
+  background-position: right center;    /* keep people on right side visible */
   background-repeat: no-repeat;
-  background-position: right center;
-  background-color: #0b1b3b;    /* fallback color behind image */
+  filter: brightness(0.85) contrast(1.15) saturate(1.1); /* enhance clarity */
+  transform: scale(1.02);
 }
-.hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, #0b1b3b80 0%, #0b1b3b40 50%, #0b1b3b00 100%)}
+
+/* dark overlay to ensure text stands out clearly */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(11, 27, 59, 0.9) 0%,          /* solid navy on left for text */
+    rgba(11, 27, 59, 0.55) 45%,        /* gradual fade */
+    rgba(11, 27, 59, 0.25) 75%,        /* light tone */
+    rgba(11, 27, 59, 0.0) 100%         /* transparent right side */
+  );
+}
 .hero__content{position:relative; text-align:center; color:#fff; padding:28px; backdrop-filter: blur(2px)}
 .hero__kicker{letter-spacing:.24em; text-transform:uppercase; opacity:.9}
 .hero__title{font-size:var(--fs-hero); margin:.2em 0 .3em; font-weight:800}
