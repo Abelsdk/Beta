@@ -98,6 +98,7 @@ img{max-width:100%; display:block}
    ===================== */
 .hero{position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden}
 .hero::before {
+  background-image: url('assets/bg.jpg');
   background-size: contain;     /* show full image without zoom */
   background-repeat: no-repeat;
   background-position: right center;
