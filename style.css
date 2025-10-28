@@ -97,7 +97,7 @@ img{max-width:100%; display:block}
    HERO (HOME PAGE)
    ===================== */
 .hero{position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden}
-.hero::before{content:""; position:absolute; inset:0; background-image:url('assets/hero-placeholder.jpg'); background-size:cover; background-position:center; filter:contrast(1.05) saturate(1.1); transform:scale(1.02)}
+.hero::before{content:""; position:absolute; inset:0; background-image:url('assets/bg.jpg'); background-size:cover; background-position:right center; filter:contrast(1.05) saturate(1.1); transform:scale(1.02)}
 .hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, #0b1b3b80 0%, #0b1b3b40 50%, #0b1b3b00 100%)}
 .hero__content{position:relative; text-align:center; color:#fff; padding:28px; backdrop-filter: blur(2px)}
 .hero__kicker{letter-spacing:.24em; text-transform:uppercase; opacity:.9}
